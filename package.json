@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
+    "@heroicons/react": "^2.0.17",
     "@ootiq/next-api-router": "^0.0.1",
+    "@tbdsux/js-utils-mini": "^0.0.2",
     "@tbdsux/js-utils-react": "^0.0.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.34",
@@ -24,6 +26,8 @@
     "postcss": "8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "recharts": "^2.5.0",
+    "swr": "^2.1.3",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   }

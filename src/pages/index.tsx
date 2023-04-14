@@ -9,7 +9,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const data: EndpointsProps = await r.json();
 
   return {
-    props: data,
+    props: { data },
   };
 };
 
