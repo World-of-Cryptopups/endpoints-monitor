@@ -1,13 +1,23 @@
+import { base64Encode } from "@/lib/b64";
 import { LogDataProps } from "@/lib/db";
+import fetcher from "@/lib/fetcher";
+import { APIProps } from "@/typings/api";
 import { ReportClass } from "@/typings/endpoint";
+import useSWR from "swr";
 import MonitorChart from "./chart";
+import { useMonitorContainer } from "./context";
 
 interface ChartsItemProps {
   item: (string | ReportClass)[];
-  data: LogDataProps[];
 }
 
 const ChartsItem = (props: ChartsItemProps) => {
+  const { selected } = useMonitorContainer();
+  const { data } = useSWR<APIProps<LogDataProps[]>>(
+    `/api/fetcher/${selected}/${base64Encode(props.item[1].toString())}`,
+    fetcher
+  );
+
   return (
     <li className="p-2 rounded-lg border my-2">
       <div className="mb-2">
@@ -22,7 +32,11 @@ const ChartsItem = (props: ChartsItemProps) => {
         <p className="text-gray-700">{props.item[1].toString()}</p>
       </div>
 
-      <MonitorChart data={props.data} url={props.item[1].toString()} />
+      {data?.data ? (
+        <MonitorChart data={data.data} url={props.item[1].toString()} />
+      ) : (
+        <p>Loading...</p>
+      )}
     </li>
   );
 };

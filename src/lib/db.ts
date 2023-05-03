@@ -7,8 +7,8 @@ export interface LogDataProps {
   is_error: boolean;
   ms: number;
   response: {
-    Code: number;
-    Status: string;
+    code: number;
+    status: string;
   };
   type: string;
   url: string;
