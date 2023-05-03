@@ -14,8 +14,12 @@ const router = new Router()
     const t = joinParams(type);
 
     const db = getDB(t);
+    const now = new Date(new Date().toDateString()).getTime() / 1000;
 
-    let { items: data, last } = await db.fetch({ url: k }, { limit: 100 });
+    let { items: data, last } = await db.fetch(
+      { url: k, "date_time?gte": now },
+      { limit: 100 }
+    );
     while (last) {
       const { items, last: newLast } = await db.fetch(
         {},
