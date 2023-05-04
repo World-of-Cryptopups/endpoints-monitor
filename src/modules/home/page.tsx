@@ -13,7 +13,7 @@ const HomePage = (props: HomePageProps) => {
       title="Wax Endpoints Monitor by World of Cryptopups"
       description=""
     >
-      <div className="w-11/12 mx-auto">
+      <div className="w-full sm:w-11/12 mx-auto">
         <div>
           <p className="text-gray-700">
             Endpoints monitor for{" "}
@@ -22,7 +22,7 @@ const HomePage = (props: HomePageProps) => {
               href="https://validate.eosnation.io/wax/reports/endpoints.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="hover:underline break-words"
             >
               https://validate.eosnation.io/wax/reports/endpoints.html
             </a>
