@@ -48,7 +48,7 @@ const MonitorChart = (props: MonitorChartProps) => {
                       <div key={p.dataKey}>
                         <p className="text-gray-900 font-bold">
                           {p.value ? (p.value as number) : "0"} {p.dataKey} (
-                          {p.payload.response.Status})
+                          {p.payload.response.status})
                         </p>
                       </div>
                     ))}
