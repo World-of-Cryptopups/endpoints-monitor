@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 import { ReactChildrenProps } from "@tbdsux/js-utils-react";
@@ -18,6 +19,10 @@ const DefaultLayout = (props: DefaultLayoutProps) => {
       <hr />
 
       <div className="my-6 w-11/12 mx-auto">{props.children}</div>
+
+      <hr />
+
+      <Footer />
     </>
   );
 };

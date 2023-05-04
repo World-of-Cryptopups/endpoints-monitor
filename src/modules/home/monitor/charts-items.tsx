@@ -35,7 +35,7 @@ const ChartsItem = (props: ChartsItemProps) => {
       {data?.data ? (
         <MonitorChart data={data.data} url={props.item[1].toString()} />
       ) : (
-        <p>Loading...</p>
+        <div className="h-64 animate-pulse bg-gray-200 rounded-xl"></div>
       )}
     </li>
   );

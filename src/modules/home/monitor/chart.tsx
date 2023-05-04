@@ -60,7 +60,7 @@ const MonitorChart = (props: MonitorChartProps) => {
             }
           />
 
-          <Area type="monotone" dataKey="ms" stroke="#a855f7" fill="#a855f7" />
+          <Area type="monotone" dataKey="ms" stroke="#6366f1" fill="#6366f1" />
         </AreaChart>
       </ResponsiveContainer>
     </div>
